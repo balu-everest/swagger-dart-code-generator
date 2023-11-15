@@ -41,7 +41,7 @@ abstract class SwaggerGeneratorBase {
             .map((String str) => str.capitalize)
             .join())
         .join('\$')
-        .replaceFirst(RegExp(options.cutFromModelNames), '');
+        .replaceAll(RegExp(options.cutFromModelNames), '');
 
     if (kKeyClasses.contains(result)) {
       return '$result\$';
